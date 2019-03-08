@@ -4,13 +4,6 @@ $(() => {
         { name: 'Samsung', price: 10000, id: 2, description: 'Samsung Galaxy S10 Plus en ny generation av smartphones. Med en 6,4” Infinity-O skärm, bakre trippelkamera och 4K-videouppspelning.', picture: 'Images/SamsungS10.png', category: 'Premium' },
         { name: 'Huawei', price: 8000, id: 3, description: 'Samsung Galaxy S10 Plus en ny generation av smartphones. Med en 6,4” Infinity-O skärm, bakre trippelkamera och 4K-videouppspelning.', picture: 'Images/HuaweiMate20Pro.png', category: 'Premium' },
         { name: 'Asus', price: 7000, id: 4, description: 'Samsung Galaxy S10 Plus en ny generation av smartphones. Med en 6,4” Infinity-O skärm, bakre trippelkamera och 4K-videouppspelning.', picture: 'Images/AsusZenfoneMaxPro.png', category: 'Premium' },
-        { name: 'Motorola', price: 6000, id: 5, description: 'Samsung Galaxy S10 Plus en ny generation av smartphones. Med en 6,4” Infinity-O skärm, bakre trippelkamera och 4K-videouppspelning.', picture: 'Images/MotorolaMotoG7Plus.png', category: 'Smartphone' },
-        { name: 'Razer', price: 5000, id: 6, description: 'Samsung Galaxy S10 Plus en ny generation av smartphones. Med en 6,4” Infinity-O skärm, bakre trippelkamera och 4K-videouppspelning.', picture: 'Images/RazerPhone2.png', category: 'Smartphone' },
-        { name: 'Huawei', price: 4000, id: 7, description: 'Samsung Galaxy S10 Plus en ny generation av smartphones. Med en 6,4” Infinity-O skärm, bakre trippelkamera och 4K-videouppspelning.', picture: 'Images/HuaweiMate20.png', category: 'Smartphone' },
-        { name: 'Cat', price: 2000, id: 8, description: 'Samsung Galaxy S10 Plus en ny generation av smartphones. Med en 6,4” Infinity-O skärm, bakre trippelkamera och 4K-videouppspelning.', picture: 'Images/CatS41.png', category: 'Work' },
-        { name: 'OldPhone', price: 200, id: 9, description: 'Samsung Galaxy S10 Plus en ny generation av smartphones. Med en 6,4” Infinity-O skärm, bakre trippelkamera och 4K-videouppspelning.', picture: 'Images/OldPhone.png', category: 'Antics' },
-        { name: 'WoodPhone', price: 500, id: 10, description: 'Samsung Galaxy S10 Plus en ny generation av smartphones. Med en 6,4” Infinity-O skärm, bakre trippelkamera och 4K-videouppspelning.', picture: 'Images/OldWoodPhone.png', category: 'Antics' },
-        { name: 'ToyPhone', price: 100, id: 11, description: 'Samsung Galaxy S10 Plus en ny generation av smartphones. Med en 6,4” Infinity-O skärm, bakre trippelkamera och 4K-videouppspelning.', picture: 'Images/ToyPhone.png', category: 'Toys' }
     ];
 
     let cart = [];
@@ -64,36 +57,6 @@ $(() => {
                 var buttonClicked = event.target
                 buttonClicked.parentElement.parentElement.remove()
             }
-        }
-
-        $(document).on("change", ".price-sorting", function() {
-
-            var sortingMethod = $(this).val();
-        
-            if(sortingMethod == 'l2h')
-            {
-                sortProductsPriceAscending();
-            }
-            else if(sortingMethod == 'h2l')
-            {
-                sortProductsPriceDescending();
-            }
-        
-        });
-        function sortProductsPriceAscending()
-        {
-            var products = $('.product');
-            products.sort(function(a, b){ return $(a).data("price")-$(b).data("price")});
-            $(".products-grid").html(products);
-        
-        }
-        
-        function sortProductsPriceDescending()
-        {
-            var products = $('.product');
-            products.sort(function(a, b){ return $(b).data("price") - $(a).data("price")});
-            $(".products-grid").html(products);
-        
         }
 
         var quantityInputs = document.getElementsByClassName('cart-quantity-input')
